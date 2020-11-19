@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Resultados</title>
+</head>
+<body>
+	<p>El usuario: <strong>{{query}}</strong></p>
+	{% if usuarios %}
+	<p>Ha sido encontrado: {{usuarios|length}} usuario con ese nombre</p>
+	<ul>
+		{%for usuarios in usuarios%}
+		<li>
+			{{usuarios.nombre}} &nbsp;{{usuarios.direccion}} &nbsp; {{usuarios.email}} &nbsp; {{usuarios.tfno}}
+		</li>
+		{% endfor %}
+	</ul>
+	{% else %}
+	<p>No esta ningun usuario con ese nombre</p>
+	{% endif %}
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+Template Name: Wetwest
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+{% load static %}
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>System Expert</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href=" {% static 'styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="{% url 'index' %}">System Expert</a></h1>
+    </div>
+  </header>
+</div>
+
+{% include "barra.html" %}
+
+<div class="wrapper bgded overlay" style="background-image:url( {% static 'images/demo/backgrounds/IotSectorSalud.jpg' %} );">
+  <div id="pageintros" class="hoc clear"> 
+    <article>
+      <div>
+        <p class="heading">Diabetes Tipo 1</p>
+        <h1 align="justify">
+          La diabetes gestacional aparece en mujeres embarazadas que nunca han tenido diabetes. Si usted tiene diabetes gestacional, su bebé podría estar en mayor riesgo de presentar complicaciones de salud. La diabetes gestacional generalmente desaparece después de que nace el bebé, pero aumenta el riesgo de que usted tenga diabetes tipo 2 más adelante en la vida. También hace más probable que cuando el bebé sea niño o adolescente sea obeso y que presente diabetes tipo 2 más adelante en la vida.
+        </h1>
+        <h1 align="justify">
+          Aunque cualquier complicación del embarazo es preocupante, hay buenas noticias. Las futuras madres pueden ayudar a controlar la diabetes gestacional comiendo alimentos saludables, haciendo ejercicio y, si es necesario, tomando medicamentos. Controlar el glucosa sanguínea puede mantenerte a ti y a tu bebé sanos y evitar un parto difícil.
+        </h1>
+        <h1 align="justify">
+          En las mujeres con diabetes gestacional, la glucosa sanguínea suele volver a la normalidad poco después del parto. Sin embargo, si has tenido diabetes gestacional, tienes un mayor riesgo de contraer diabetes tipo 2. Necesitarás que te hagan pruebas más a menudo para detectar cambios en la glucosa sanguínea.
+        </h1>
+      </div>
+    </article>
+  </div>
+</div>
+<div class="wrapper row4">
+  <footer class="hoc clear"> 
+    <div class="one_quarter first">
+      <h6 class="heading">Direccion</h6>
+      <ul class="nospace btmspace-30 linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+          Facultad de ciencias de la computacion
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> +52 (123) 456 7890</li>
+        <li><i class="fa fa-envelope-o"></i> contactose@hotmail.com</li>
+      </ul>
+    </div>
+    <div class="two_quarter">
+      <h6 class="heading">Contacta con nosotros</h6>
+      <p class="nospace btmspace-15">Si desea obtener mas informacion contacte con nosotros, haga click en el siguiente boton: </p>
+      <li><a href="{% url 'contacto' %}">Contactar</a></li>
+    </div>
+  </footer>
+</div>
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src=" {% static 'layout/scripts/jquery.min.js' %}"></script>
+<script src=" {% static 'layout/scripts/jquery.backtotop.js' %}"></script>
+<script src=" {% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
+</body>
+</html>

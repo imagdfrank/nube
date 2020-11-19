@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+<div class="wrapper row2">
+  <nav id="mainav" class="hoc clear"> 
+    <ul class="clear">
+      <li class="active"><a href="{% url 'index' %}">Inicio</a></li>
+      <li><a class="active" href="{% url 'diabetes' %}">Diabetes</a>
+        <ul>
+          <li><a href="{% url 'prediabetes' %}">Prediabetes</a></li>
+          <li><a href="{% url 'diabetesgestacional' %}">Diabetes Gestacional</a></li>
+          <li><a href="{% url 'diabetestipo1' %}">Diabetes Tipo 1</a></li>
+          <li><a href="{% url 'diabetestipo2' %}">Diabetes Tipo 2</a></li>
+        </ul>
+      <li><a href="#">Informacion</a></li>
+      {% if user.username %}
+      <li style="float:right"><a class="active" href="/salir/">{{user.username}}</a></li>
+      {% else %}
+      <li style="float:right"><a class="active" href="{% url 'iniciarsesion' %}">{{user.username}}Iniciar Sesion</a></li>
+      {% endif %}
+
+    </ul>
+  </nav>
+</div>
+
+</body>
+
+</html>

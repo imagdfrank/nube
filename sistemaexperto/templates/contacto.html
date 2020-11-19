@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+Template Name: Wetwest
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+{% load static %}
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>System Expert</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href=" {% static 'styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="{% url 'index' %}">System Expert</a></h1>
+    </div>
+  </header>
+</div>
+
+{% include "barra.html" %}
+
+<div class="wrapper bgded overlay" style="background-image:url( {% static 'images/demo/backgrounds/IotSectorSalud.jpg' %} );">
+  <div id="pageintros" class="hoc clear"> 
+    <article>
+      <div>
+        <form action="/contacto/" method="POST">{% csrf_token %}
+      		<p>Asunto: <input type="text" name="asunto" style="background-color:black;"></p>
+      		<p>Email: <input type="text" name="email" style="background-color:black;"></p>
+      		<p>Mensaje: <textarea name="mensaje" rows="15" cols="45" style="background-color:black;"></textarea></p>
+    			<input type="submit" name="Contactar" style="background-color:black;">		
+      	</form>
+      </div>
+    </article>
+  </div>
+</div>
+<div class="wrapper row4">
+  <footer class="hoc clear"> 
+    <div class="one_quarter first">
+      <h6 class="heading">Direccion</h6>
+      <ul class="nospace btmspace-30 linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+          Facultad de ciencias de la computacion
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> +52 (123) 456 7890</li>
+        <li><i class="fa fa-envelope-o"></i> contactose@hotmail.com</li>
+      </ul>
+    </div>
+    <div class="two_quarter">
+      <h6 class="heading">Contacta con nosotros</h6>
+      <p class="nospace btmspace-15">Si desea obtener mas informacion contacte con nosotros, haga click en el siguiente boton: </p>
+      <li><a href="{% url 'contacto' %}">Contactar</a></li>
+    </div>
+  </footer>
+</div>
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<script src=" {% static 'layout/scripts/jquery.min.js' %}"></script>
+<script src=" {% static 'layout/scripts/jquery.backtotop.js' %}"></script>
+<script src=" {% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
+</body>
+</html>

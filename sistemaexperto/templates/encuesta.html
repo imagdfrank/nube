@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<!--
+Template Name: Wetwest
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+{% load static %}
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>System Expert</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href=" {% static 'styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+{% if error %}
+<p>Error al registrar usuario</p>
+{% endif %}
+{% if registrado %}
+<p>Nombre de usuario ya registrado, utilize otro</p>
+{% endif %}
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <div id="logo" class="fl_left">
+      <h1><a href="{% url 'index' %}">System Expert</a></h1>
+    </div>
+  </header>
+</div>
+
+{% include "barra.html" %}
+
+<div class="wrapper bgded overlay" style="background-image:url( {% static 'images/demo/backgrounds/IotSectorSalud.jpg' %} );">
+  <div id="pageintros" class="hoc clear"> 
+    <article>
+      <div>
+        <h2 class="heading">Realiza la encuesta</h2>        
+      </div>
+      <div>
+        <form method="POST" action=/pruebaencuesta/>
+          {% csrf_token %}
+          <!-- Pregunta 1-->
+          <p>¿Tiene familiares cercanos con diabetes como padres, hermanos?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta1" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta1" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 2-->
+          <p>¿Tiene familiares no tan cercanos con diabetes como abuelos, tios, primos?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta2" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta2" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 3-->
+          <p>¿Vive en un lugar donde la contaminacion es alta?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta3" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta3" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 4-->
+          <p>¿Vive en un ambiente frio?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta4" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta4" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 5-->
+          <p>¿Lleva una vida sedentaria?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta5" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta5" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 6-->
+          <p>¿Tiene falta de ejercicio?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta6" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta6" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 7-->
+          <p>¿Tiene obesidad?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta7" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta7" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 8-->
+          <p>¿Tiene falta de sueño?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta8" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta8" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 9-->
+          <p>¿Tiene pocas horas de descanso?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta9" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta9" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 10-->
+          <p>¿Tiene una mala alimentacion?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta10" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta10" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 11-->
+          <p>¿Tiene estres emocional?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta11" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta11" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 12-->
+          <p>¿Sufre de ansiedad?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta12" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta12" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 13-->
+          <p>¿Hace uso constante de medicamentos?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta13" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta13" value="si">Si
+              </label>
+            </div>
+          </div>
+
+           <!-- Pregunta 14-->
+          <p>¿Hace de uso de antidepresivos?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta14" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta14" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 15-->
+          <p>¿Sufre de tension nerviosa?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta15" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta15" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 16-->
+          <p>¿Tiene colesterol alto?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta16" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta16" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 17-->
+          <p>¿Fuma en exceso?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta17" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta17" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 18-->
+          <p>¿Bebe alcohol en exceso?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta18" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta18" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 19-->
+          <p>¿Consume azucar en exceso?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta19" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta19" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 20-->
+          <p>¿Consume poca agua?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta20" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta20" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 21-->
+          <p>¿Presenta sed excesiva?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta21" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta21" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 22-->
+          <p>¿Presenta hambre excesiva?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta22" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta22" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 23-->
+          <p>¿Pierde peso de manera inexplicable?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta23" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta23" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 24-->
+          <p>¿Orina varias veces al dia?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta24" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta24" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 25-->
+          <p>¿Tiene vision borrosa?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta25" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta25" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 26-->
+          <p>¿Presenta cansancio?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta26" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta26" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 27-->
+          <p>¿Presenta fatiga?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta27" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta27" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 28-->
+          <p>¿Se le entumecen los pies?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta28" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta28" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 29-->
+          <p>¿Tiene areas de la piel oscurecidas?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta29" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta29" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 30-->
+          <p>¿Tiene heridas que no cicatrizan?</p>
+          <div style="display: flex;">
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;" >
+                <input type="radio" name="pregunta30" value="no" checked>No
+              </label>
+            </div>
+            <div style="margin: 0 1.81em 0 0;">
+              <label style="display: flex;">
+                <input type="radio" name="pregunta30" value="si">Si
+              </label>
+            </div>
+          </div>
+
+          <input type="submit" value="Enviar" style="background-color:black;">
+          </form>
+      </div>
+    </article>
+  </div>
+
+</div>
+<div class="wrapper row4">
+  <footer class="hoc clear"> 
+    <div class="one_quarter first">
+      <h6 class="heading">Direccion</h6>
+      <ul class="nospace btmspace-30 linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+          Facultad de ciencias de la computacion
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> +52 (123) 456 7890</li>
+        <li><i class="fa fa-envelope-o"></i> contactose@hotmail.com</li>
+      </ul>
+    </div>
+    <div class="two_quarter">
+      <h6 class="heading">Contacta con nosotros</h6>
+      <p class="nospace btmspace-15">Si desea obtener mas informacion contacte con nosotros, haga click en el siguiente boton: </p>
+      <li><a href="{% url 'contacto' %}">Contactar</a></li>
+    </div>
+  </footer>
+</div>
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<script src=" {% static 'layout/scripts/jquery.min.js' %}"></script>
+<script src=" {% static 'layout/scripts/jquery.backtotop.js' %}"></script>
+<script src=" {% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
+</body>
+</html>
